@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.Pharmachek" parent="Base.Theme.Pharmachek" />
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#DFF2E4</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+    </style>
+
 </resources>
