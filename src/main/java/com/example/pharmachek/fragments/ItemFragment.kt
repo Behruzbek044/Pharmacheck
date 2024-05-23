@@ -1,11 +1,14 @@
 package com.example.pharmachek.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
+import com.example.pharmachek.MainActivity
 import com.example.pharmachek.R
 import com.example.pharmachek.api.ApiService
 import com.example.pharmachek.databinding.FragmentItemBinding
@@ -42,6 +45,10 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
 
         val db = ApplicationDatabase.createDatabase(requireContext()).drugDao()
 
+        binding.backButton.setOnClickListener {
+            (requireActivity() as MainActivity).showBottomNavigation()
+            parentFragmentManager.popBackStack()
+        }
 
         val requestData = RequestData(opr, det)
 
@@ -93,4 +100,16 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
         })
 
     }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                (requireActivity() as MainActivity).showBottomNavigation()
+                parentFragmentManager.popBackStack()
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+    }
+
 }
