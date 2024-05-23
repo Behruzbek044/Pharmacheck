@@ -11,6 +11,7 @@ import com.example.pharmachek.api.ApiService
 import com.example.pharmachek.databinding.FragmentItemBinding
 import com.example.pharmachek.model.request.RequestData
 import com.example.pharmachek.model.response.ResponseData
+import com.example.pharmachek.models.ApplicationDatabase
 import com.example.pharmachek.utils.Constants
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,6 +40,9 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
         val opr = "ch"
         val det = str
 
+        val db = ApplicationDatabase.createDatabase(requireContext()).drugDao()
+
+
         val requestData = RequestData(opr, det)
 
         apiService.getResponse(requestData).enqueue(object : Callback<List<ResponseData>> {
@@ -56,6 +60,7 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
                             var positiv = it[0].positiv * 100
                             var neutral = it[0].neutral * 100
                             var negative = it[0].negative * 100
+                            //val drugData = db.getDrugByBarcode(it[0].sht_kod)
                             greenText.text = positiv.toString()
                             yellowText.text = neutral.toString()
                             redText.text = negative.toString()
@@ -63,8 +68,19 @@ class ItemFragment : Fragment(R.layout.fragment_item) {
                             progressBarName.visibility = View.INVISIBLE
                             drugImage.visibility = View.VISIBLE
                             drugName.visibility = View.VISIBLE
-                            descriptionText.visibility = View.VISIBLE
-                            descriptionTv.visibility = View.VISIBLE
+//                            descriptionText.visibility = View.VISIBLE
+//                            descriptionTv.visibility = View.VISIBLE
+                            if (it[0].sht_kod == "8901718010904") {
+                                drugImage.setImageResource(R.drawable.dok1_maks)
+                                drugName.text = "Dok 1 Maks"
+                            }
+                            if(it[0].sht_kod == "4780026650026") {
+                                drugImage.setImageResource(R.drawable.img_1)
+                                drugName.text = "Paracetamol"
+                            }
+//                            if (drugData != null) {
+//                                drugName.text = drugData.name
+//                            }
                         }
                     }
                 }
