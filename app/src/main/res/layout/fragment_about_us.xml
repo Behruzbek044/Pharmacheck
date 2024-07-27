@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/iconBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/back_button_background"
+        android:clickable="true"
+        android:clipToOutline="true"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:padding="12dp"
+        android:src="@drawable/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/biz_haqimizda"
+        android:textColor="@color/fragment_title"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/iconBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iconBack" />
+
+    <TextView
+        android:id="@+id/aboutUsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingHorizontal="24dp"
+        android:text="@string/about_us_text"
+        android:textAlignment="center"
+        android:textColor="@color/fragment_title"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".2" />
+
+    <TextView
+        android:id="@+id/aboutUsSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingHorizontal="24dp"
+        android:text="@string/bizni_ijtimoiy_tarmoqda_kuztib_borishingiz_mumkin"
+        android:textColor="@color/fragment_title"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aboutUsText" />
+
+    <ImageView
+        android:id="@+id/telegramIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_telegram"
+        app:layout_constraintStart_toStartOf="@id/aboutUsSubtitle"
+        app:layout_constraintTop_toBottomOf="@id/aboutUsSubtitle" />
+
+    <TextView
+        android:id="@+id/telegramValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="t.me/pharmacheck_uz"
+        android:background="?selectableItemBackground"
+        android:textColor="#468ACD"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/telegramIcon"
+        app:layout_constraintStart_toEndOf="@id/telegramIcon"
+        app:layout_constraintTop_toTopOf="@id/telegramIcon" />
+
+    <ImageView
+        android:id="@+id/youTubeIcon"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_youtube"
+        app:layout_constraintStart_toStartOf="@id/telegramIcon"
+        app:layout_constraintTop_toBottomOf="@id/telegramIcon" />
+
+    <TextView
+        android:id="@+id/youTubeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="youtube.com/@pharmacheckuz"
+        android:textColor="#468ACD"
+        android:textSize="16sp"
+        android:background="?selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="@id/youTubeIcon"
+        app:layout_constraintStart_toEndOf="@id/youTubeIcon"
+        app:layout_constraintTop_toTopOf="@id/youTubeIcon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/back_button_background"
+            android:clickable="true"
+            android:clipToOutline="true"
+            android:contentDescription="@null"
+            android:elevation="1dp"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:padding="12dp"
+            android:src="@drawable/back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <ImageView
+            android:id="@+id/iconFavorite"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="invisible"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/back_button_background"
+            android:clickable="true"
+            android:clipToOutline="true"
+            android:contentDescription="@null"
+            android:elevation="1dp"
+            android:focusable="true"
+            android:foreground="?selectableItemBackground"
+            android:padding="12dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="@id/iconBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iconBack"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/detail"
+            android:textColor="@color/fragment_title"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/iconBack"
+            app:layout_constraintEnd_toStartOf="@id/iconFavorite"
+            app:layout_constraintStart_toEndOf="@id/iconBack"
+            app:layout_constraintTop_toTopOf="@id/iconBack" />
+
+        <ImageView
+            android:id="@+id/drugImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconBack" />
+
+        <TextView
+            android:id="@+id/drugName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/fragment_title"
+            android:textSize="20sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drugImage"
+            tools:text="Sedonik" />
+
+        <LinearLayout
+            android:id="@+id/drugStatusContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/drug_status_background"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="36dp"
+            android:paddingVertical="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drugName">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/firstIndicator"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:max="100"
+                    android:progress="10"
+                    app:indicatorColor="@color/red"
+                    app:indicatorDirectionCircular="counterclockwise"
+                    app:trackColor="@color/red_alpha" />
+
+                <TextView
+                    android:id="@+id/firstIndicatorValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/inter"
+                    android:maxLength="3"
+                    android:textColor="@color/red"
+                    tools:text="100" />
+
+            </FrameLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/secondIndicator"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:max="100"
+                    android:progress="10"
+                    app:indicatorColor="@color/yellow"
+                    app:indicatorDirectionCircular="counterclockwise"
+                    app:trackColor="@color/yellow_alpha" />
+
+                <TextView
+                    android:id="@+id/secondIndicatorValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/inter"
+                    android:maxLength="3"
+                    android:textColor="@color/yellow"
+                    tools:text="100" />
+
+            </FrameLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/thirdIndicator"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="center"
+                    android:max="100"
+                    android:progress="10"
+                    app:indicatorColor="@color/green"
+                    app:indicatorDirectionCircular="counterclockwise"
+                    app:trackColor="@color/green_alpha" />
+
+                <TextView
+                    android:id="@+id/thirdIndicatorValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/inter"
+                    android:maxLength="3"
+                    android:textColor="@color/green"
+                    tools:text="100" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/compositionDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/tarkibi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drugStatusContainer" />
+
+        <TextView
+            android:id="@+id/compositionDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/compositionDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/pharmacologicalPropertiesDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/farmakologik_xossalari"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/compositionDrugText" />
+
+        <TextView
+            android:id="@+id/pharmacologicalPropertiesDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pharmacologicalPropertiesDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/indicationsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/ko_rsatmalar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pharmacologicalPropertiesDrugText" />
+
+        <TextView
+            android:id="@+id/indicationsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indicationsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/dosageAndAdministrationDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/foydalanish_bo_yicha_ko_rsatmalar_va_dozlar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/indicationsDrugText" />
+
+        <TextView
+            android:id="@+id/dosageAndAdministrationDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dosageAndAdministrationDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/sideEffectsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/yon_effektlar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dosageAndAdministrationDrugText" />
+
+        <TextView
+            android:id="@+id/sideEffectsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sideEffectsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/contraindicationsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/kontrendikatsiyalar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sideEffectsDrugText" />
+
+        <TextView
+            android:id="@+id/contraindicationsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contraindicationsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/overdoseDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/dozani_oshirib_yuborish"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contraindicationsDrugText" />
+
+        <TextView
+            android:id="@+id/overdoseDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overdoseDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/specialConditionsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/maxsus_shartlar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/overdoseDrugText" />
+
+        <TextView
+            android:id="@+id/specialConditionsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialConditionsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/interactionsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/o_zaro_ta_sirlar"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialConditionsDrugText" />
+
+        <TextView
+            android:id="@+id/interactionsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/interactionsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/storageConditionsDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/saqlash_shartlari"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/interactionsDrugText" />
+
+        <TextView
+            android:id="@+id/storageConditionsDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/storageConditionsDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/shelfLifeDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/saqlash_muddati"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/storageConditionsDrugText" />
+
+        <TextView
+            android:id="@+id/shelfLifeDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shelfLifeDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/releaseFormDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/chiqarish_shakli"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shelfLifeDrugText" />
+
+        <TextView
+            android:id="@+id/releaseFormDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/releaseFormDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/manufacturerInfoDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/ishlab_chiqaruvchi_ma_lumot"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/releaseFormDrugText" />
+
+        <TextView
+            android:id="@+id/manufacturerInfoDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/manufacturerInfoDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/massDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/massa"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/manufacturerInfoDrugText" />
+
+        <TextView
+            android:id="@+id/massDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/massDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/producerDrugTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_semibold"
+            android:paddingHorizontal="16dp"
+            android:text="@string/ishlab_chiqaruvchi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/massDrugText" />
+
+        <TextView
+            android:id="@+id/producerDrugText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/inter"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/producerDrugTitle"
+            tools:text="@tools:sample/lorem" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

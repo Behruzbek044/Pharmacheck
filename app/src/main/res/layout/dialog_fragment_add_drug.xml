@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drug_status_background"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iconBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:src="@drawable/ic_barcode"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/barcodeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconBarcode"
+        tools:text="MYUI7821A-G2-90A" />
+
+    <TextView
+        android:id="@+id/enterDrugText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/enter_drug_name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barcodeText" />
+
+    <EditText
+        android:id="@+id/drugNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_drug_name_background"
+        android:fontFamily="@font/inter"
+        android:inputType="text"
+        android:paddingHorizontal="16dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/iconBarcode"
+        app:layout_constraintStart_toStartOf="@id/iconBarcode"
+        app:layout_constraintTop_toBottomOf="@id/enterDrugText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@android:color/transparent"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/orqaga"
+        android:textColor="#45A576"
+        android:textSize="14sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@id/btnAdd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drugNameEditText"
+        app:rippleColor="@null"
+        app:strokeColor="#45A576"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#45A576"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/qo_shish"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toBottomOf="@id/drugNameEditText"
+        app:rippleColor="@null" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

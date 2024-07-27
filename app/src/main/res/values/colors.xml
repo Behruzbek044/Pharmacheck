@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#F9FBFF</color>
+    <color name="splash_background">#DFF2E4</color>
+    <color name="bottom_circle_frame">#45A576</color>
+    <color name="main_background">#EAEDF4</color>
+    <color name="gray">#B3B3B3</color>
+    <color name="dark_gray">#AEAEAE</color>
+    <color name="fragment_title">#2C2C2C</color>
+    <color name="red">#FF0000</color>
+    <color name="red_alpha">#F6E6EA</color>
+    <color name="yellow">#F3F817</color>
+    <color name="yellow_alpha">#F7F8DF</color>
+    <color name="green">#009F10</color>
+    <color name="green_alpha">#A6DBAB</color>
+</resources>

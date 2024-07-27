@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+    <ImageView
+        android:id="@+id/iconBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/back_button_background"
+        android:clickable="true"
+        android:clipToOutline="true"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:padding="12dp"
+        android:src="@drawable/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/yordam"
+        android:textColor="@color/fragment_title"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/iconBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iconBack" />
+
+    <TextView
+        android:id="@+id/forConnectWithUsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingHorizontal="32dp"
+        android:text="@string/biz_bilan_bog_lanish_uchun"
+        android:textColor="@color/fragment_title"
+        android:textSize="18sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".4" />
+
+    <TextView
+        android:id="@+id/gmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingStart="32dp"
+        android:paddingEnd="8dp"
+        android:text="@string/gmail"
+        android:textColor="@color/fragment_title"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/forConnectWithUsText"
+        app:layout_constraintTop_toBottomOf="@id/forConnectWithUsText" />
+
+    <TextView
+        android:id="@+id/gmailValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingEnd="24dp"
+        android:text="Pharmacheckuz@gmail.com"
+        android:textColor="#468ACD"
+        android:background="?selectableItemBackground"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/gmailTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/gmailTitle"
+        app:layout_constraintTop_toTopOf="@id/gmailTitle" />
+
+    <TextView
+        android:id="@+id/phoneTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingStart="32dp"
+        android:paddingEnd="8dp"
+        android:text="@string/telefon"
+        android:textColor="@color/fragment_title"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/forConnectWithUsText"
+        app:layout_constraintTop_toBottomOf="@id/gmailTitle" />
+
+    <TextView
+        android:id="@+id/phoneValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/inter"
+        android:paddingEnd="24dp"
+        android:text="+998914310250"
+        android:textColor="#468ACD"
+        android:textSize="16sp"
+        android:background="?selectableItemBackground"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/phoneTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/phoneTitle"
+        app:layout_constraintTop_toTopOf="@id/phoneTitle"
+        tools:ignore="RtlSymmetry" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

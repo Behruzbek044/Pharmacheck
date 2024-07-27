@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.pharmachek.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="drugImage"
+            app:argType="string" />
+        <argument
+            android:name="drugName"
+            app:argType="string" />
+        <argument
+            android:name="composition"
+            app:argType="string" />
+        <argument
+            android:name="drugPositive"
+            app:argType="integer" />
+        <argument
+            android:name="drugNegative"
+            app:argType="integer" />
+        <argument
+            android:name="drugNeutral"
+            app:argType="integer" />
+        <argument
+            android:name="pharmacologicalProperties"
+            app:argType="string" />
+        <argument
+            android:name="dosageAndAdministration"
+            app:argType="string" />
+        <argument
+            android:name="sideEffects"
+            app:argType="string" />
+        <argument
+            android:name="contraindications"
+            app:argType="string" />
+        <argument
+            android:name="overdose"
+            app:argType="string" />
+        <argument
+            android:name="specialConditions"
+            app:argType="string" />
+        <argument
+            android:name="interactions"
+            app:argType="string" />
+        <argument
+            android:name="storageConditions"
+            app:argType="string" />
+        <argument
+            android:name="shelfLife"
+            app:argType="string" />
+        <argument
+            android:name="releaseForm"
+            app:argType="string" />
+        <argument
+            android:name="manufacturerInfo"
+            app:argType="string" />
+        <argument
+            android:name="mass"
+            app:argType="string" />
+        <argument
+            android:name="indications"
+            app:argType="string" />
+        <argument
+            android:name="producer"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.pharmachek.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.pharmachek.ui.onboarding.OnBoardingFragment"
+        android:label="OnBoardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popUpTo="@id/onBoardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pharmachek.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_checkDrugDialogFragment"
+            app:destination="@id/checkDrugDialogFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/checkDrugDialogFragment"
+        android:name="com.example.pharmachek.ui.checkDrug.CheckDrugDialogFragment"
+        android:label="CheckDrugDialogFragment"
+        tools:layout="@layout/dialog_fragment_check_drug">
+        <action
+            android:id="@+id/action_checkDrugDialogFragment_to_addDrugDialogFragment"
+            app:destination="@id/addDrugDialogFragment"
+            app:popUpTo="@id/checkDrugDialogFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="barcodeText"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/addDrugDialogFragment"
+        android:name="com.example.pharmachek.ui.addDrug.AddDrugDialogFragment"
+        android:label="AddDrugDialogFragment"
+        tools:layout="@layout/dialog_fragment_add_drug">
+        <action
+            android:id="@+id/action_addDrugDialogFragment_to_sendedDrugDialogFragment"
+            app:destination="@id/sendedDrugDialogFragment"
+            app:popUpTo="@id/addDrugDialogFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="barcodeText"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/sendedDrugDialogFragment"
+        android:name="com.example.pharmachek.ui.sendedDrug.SendedDrugDialogFragment"
+        android:label="SendedDrugDialogFragment"
+        tools:layout="@layout/dialog_fragment_sended_drug" />
+</navigation>

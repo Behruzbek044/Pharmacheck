@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.pharmachek.ui.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="drugImage"
+            app:argType="string" />
+        <argument
+            android:name="drugName"
+            app:argType="string" />
+        <argument
+            android:name="composition"
+            app:argType="string" />
+        <argument
+            android:name="drugPositive"
+            app:argType="integer" />
+        <argument
+            android:name="drugNegative"
+            app:argType="integer" />
+        <argument
+            android:name="drugNeutral"
+            app:argType="integer" />
+        <argument
+            android:name="pharmacologicalProperties"
+            app:argType="string" />
+        <argument
+            android:name="dosageAndAdministration"
+            app:argType="string" />
+        <argument
+            android:name="sideEffects"
+            app:argType="string" />
+        <argument
+            android:name="contraindications"
+            app:argType="string" />
+        <argument
+            android:name="overdose"
+            app:argType="string" />
+        <argument
+            android:name="specialConditions"
+            app:argType="string" />
+        <argument
+            android:name="interactions"
+            app:argType="string" />
+        <argument
+            android:name="storageConditions"
+            app:argType="string" />
+        <argument
+            android:name="shelfLife"
+            app:argType="string" />
+        <argument
+            android:name="releaseForm"
+            app:argType="string" />
+        <argument
+            android:name="manufacturerInfo"
+            app:argType="string" />
+        <argument
+            android:name="mass"
+            app:argType="string" />
+        <argument
+            android:name="indications"
+            app:argType="string" />
+        <argument
+            android:name="producer"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pharmachek.ui.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.pharmachek.ui.bookmark.BookmarkFragment"
+        android:label="BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark">
+
+        <action
+            android:id="@+id/action_bookmarkFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.pharmachek.ui.chat.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.pharmachek.ui.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_supportFragment"
+            app:destination="@id/supportFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_aboutUsFragment"
+            app:destination="@id/aboutUsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.example.pharmachek.ui.support.SupportFragment"
+        android:label="SupportFragment"
+        tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        tools:layout="@layout/fragment_about_us"
+        android:name="com.example.pharmachek.ui.aboutUs.AboutUsFragment"
+        android:label="AboutUsFragment" />
+</navigation>

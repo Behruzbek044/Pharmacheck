@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/splash_background">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="@dimen/app_logo_margin"
+        android:contentDescription="@null"
+        android:src="@drawable/app_logo_second"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".1" />
+
+    <View
+        android:id="@+id/bottomCircleFrame"
+        android:layout_width="0dp"
+        android:layout_height="500dp"
+        android:background="@drawable/bottom_circle_frame_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWelcomeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="42dp"
+        android:layout_marginTop="42dp"
+        android:fontFamily="@font/lalezar"
+        android:text="@string/welcome_title"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/bottomCircleFrame"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/bottomCircleFrame"
+        app:layout_constraintTop_toTopOf="@id/bottomCircleFrame" />
+
+    <TextView
+        android:id="@+id/tvWelcomeSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/khmer"
+        android:text="@string/welcome_subtitle"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/tvWelcomeTitle"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/tvWelcomeTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcomeTitle" />
+
+    <ImageView
+        android:id="@+id/iconNext"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="34dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@id/bottomCircleFrame"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcomeSubtitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

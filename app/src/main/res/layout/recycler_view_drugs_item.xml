@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:background="@drawable/recycler_view_drug_item_background"
+    android:clipToOutline="true"
+    android:elevation="1dp"
+    android:foreground="?selectableItemBackground"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/iconFavorite"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/icon_favorite_background"
+        android:clipToOutline="true"
+        android:contentDescription="@null"
+        android:elevation="1dp"
+        android:foreground="?selectableItemBackground"
+        android:padding="6dp"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/drugImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iconFavorite"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/drugName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ellipsize="marquee"
+        android:fontFamily="@font/inter_semibold"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingEnd="16dp"
+        android:singleLine="true"
+        android:textColor="#2C2C2C"
+        android:textSize="16sp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drugImage"
+        tools:text="Tabletka 1" />
+
+    <TextView
+        android:id="@+id/drugFarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto"
+        android:paddingEnd="16dp"
+        android:textColor="#8C8C8C"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/drugName"
+        tools:text="Nicopharm/uzb" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
