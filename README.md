@@ -1,2 +1,2 @@
 # Pharmacheck
-Application assessing the quality of a medicine analysing the net
+Pharmacheck - an application that determines the safety level of drugs based on data using artificial intelligence. In our app, you can get drug ratings, instructions, and additional information by scanning the drug's barcode or entering its name in the search field. Currently, we are working on developing a chatbot that can provide simple and well-founded answers to questions about drugs. This will help improve the public's literacy regarding drug consumption and ensure their effective use.
